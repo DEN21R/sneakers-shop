@@ -22,7 +22,10 @@ function Header() {
       position="static"
       sx={{ backgroundColor: '#3B3C3D', px: 31.25, py: 5.4 }}
     >
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Toolbar
+        disableGutters
+        sx={{ display: 'flex', justifyContent: 'space-between' }}
+      >
         <Typography sx={{ fontSize: '20px', fontWeight: 900 }}>
           Сникер - магазин
         </Typography>
