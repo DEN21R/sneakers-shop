@@ -1,6 +1,12 @@
-import { CardContent, Card, Typography, CardMedia } from '@mui/material'
+import { CardContent, Card, Typography, CardMedia, Button } from '@mui/material'
+import { connect } from 'react-redux'
+import { addToCart } from '../../rerdux/actions'
 
-function ProductCard({ product }) {
+function ProductCard({ dispatch, product }) {
+  const addCart = () => {
+    addToCart(dispatch, product)
+  }
+
   return (
     <Card
       sx={{
@@ -14,7 +20,7 @@ function ProductCard({ product }) {
       <CardMedia
         component="img"
         image={product.image}
-        alt={product.title}
+        alt={product.name}
         sx={{
           height: 220,
           objectFit: 'cover',
@@ -40,8 +46,9 @@ function ProductCard({ product }) {
         <Typography sx={{ fontSize: 24, fontWeight: 700, color: '#000000' }}>
           {product.price} €
         </Typography>
+        <Button onClick={addCart}>+</Button>
       </CardContent>
     </Card>
   )
 }
-export default ProductCard
+export default connect()(ProductCard)
