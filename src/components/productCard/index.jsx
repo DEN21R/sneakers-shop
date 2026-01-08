@@ -1,6 +1,8 @@
-import { CardContent, Card, Typography, CardMedia, Button } from '@mui/material'
+import { CardContent, Card, Typography, CardMedia, Box } from '@mui/material'
 import { connect } from 'react-redux'
 import { addToCart } from '../../rerdux/actions'
+import AddIcon from '@mui/icons-material/Add'
+import { IconButton } from '@mui/material'
 
 function ProductCard({ dispatch, product }) {
   const addCart = () => {
@@ -38,15 +40,39 @@ function ProductCard({ dispatch, product }) {
           '&:last-child': {
             pb: 0,
           },
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
-        <Typography sx={{ fontSize: 14, fontWeight: 500, color: '#666666' }}>
-          Цена:
-        </Typography>
-        <Typography sx={{ fontSize: 24, fontWeight: 700, color: '#000000' }}>
-          {product.price} €
-        </Typography>
-        <Button onClick={addCart}>+</Button>
+        <Box>
+          <Typography sx={{ fontSize: 14, fontWeight: 500, color: '#666666' }}>
+            Цена:
+          </Typography>
+          <Typography sx={{ fontSize: 24, fontWeight: 700, color: '#000000' }}>
+            {product.price} €
+          </Typography>
+        </Box>
+
+        <IconButton
+          onClick={addCart}
+          sx={{
+            width: 37,
+            height: 37,
+            border: '1px solid #E0E0E0',
+            color: '#9E9E9E',
+            transition: 'all 0.2s ease',
+
+            '&:hover': {
+              backgroundColor: '#000',
+              color: '#fff',
+              borderColor: '#000',
+            },
+          }}
+        >
+          <AddIcon fontSize="small" />
+        </IconButton>
       </CardContent>
     </Card>
   )
