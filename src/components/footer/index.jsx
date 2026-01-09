@@ -46,13 +46,13 @@ function Footer() {
           }}
         >
           <Box sx={{ display: 'flex', gap: 3 }}>
-            <a>
+            <a href="https://www.facebook.com/">
               <img src={facebookLogo} alt="facebook" />
             </a>
-            <a>
+            <a href="https://x.com/">
               <img src={twitterLogo} alt="twitter" />
             </a>
-            <a>
+            <a href="https://www.instagram.com/">
               <img src={instagramLogo} alt="instagram" />
             </a>
           </Box>
